@@ -79,8 +79,8 @@ $sender = new twilioSender($lastMsg, $from, $db);
 		$db->location = "300 W 23rd St New York NY";
 		$sender->lastMsg = Messages::WhatsYourAddress;
 		echo $sender->getResponseType("65") == Messages::ReportBooths; 
-		echo $sender->numPeople == 65;
-		echo $sender->phone == $from;
+		echo $db->numPeople != 65;
+		echo $db->phone == $from;
 		
 	?>
 </div>
