@@ -16,7 +16,7 @@ function connectDB(){
 }
 
 function get_inserted_id($connection, $query) {
-	mysqli_query($connection, $query_polling);
+	mysqli_query($connection, $query);
 	return mysqli_insert_id($connection);
 }
 
@@ -35,5 +35,26 @@ function getCurrentTimestamp() {
 	$date = date('Y-m-d H:i:s');
 	$time = strtotime('-4 hours', strtotime($date));
 	return $time;
+}
+
+function getHourlyTimestamp() {
+	date_default_timezone_set("America/New_York");
+	$date = date('Y-m-d H:i:s');
+	$time = strtotime('-1 hours', strtotime($date));
+	return $time;
+}
+
+function translateTimeStamp($timestamp) {
+	$date = date_create();
+	date_timestamp_set($date, $timestamp);
+	return date_format($date, 'Y-m-d H:i:s');
+}
+
+function getWaitTime($people, $people_instance, $booth, $booth_instance, $votingavg) {
+	$peopleavg = $people/$people_instance;
+	$boothavg = $booth/$booth_instance;
+	$waitTime = ($peopleavg*$boothavg)/$votingavg;
+	
+	return $waitTime;
 }
 ?>

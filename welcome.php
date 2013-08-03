@@ -1,17 +1,16 @@
-<!doctype html>
 
 
   <?php
   require 'polls.php';
   	function userAddress(){
-  		$addressstring = $_POST["street-num"]." ".$_POST["street"]." ".$_POST["city"]." ".$_POST["state"];
+  		$addressstring = $_POST["street-num"]." ".$_POST["city"]." ".$_POST["state"];
     //var_dump($addressstring);
   	return $addressstring;
 
   	}
     
 	function pollingLocation(){
-	$address = $_POST["street-num"]." ".$_POST["street"]." ".$_POST["city"]." ".$_POST["state"];
+	$address = $_POST["street-num"]." ".$_POST["city"]." ".$_POST["state"];
 	$polls = new Polls();
 	$result = $polls->locate($address);
 
@@ -32,4 +31,3 @@
 	?>
 
 
-</html>

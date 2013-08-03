@@ -17,49 +17,49 @@
 
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
 
+    <style>
+      form {
+        margin-top: 30px;
+        margin-bottom: 30px;
+      }
+    </style>    
+
   </head>
   <body>
   <div class="container">
 
 	<div class="row">
 
-    <img id="logo" src="img/bbq.svg">
+	  <div class="col-12 col-lg-8">
+      <h1>Election Day: 9.10.2013</h1>
 
-	  <div class="col-12 col-lg-8"><h1>Register</h1></div>
-
-
-    <div class="col-12 col-lg-8">
+        <h4>Send us your deets and we'll text you your wait time.</h4>
+        <h4>Sit back, relax and get ready to vote.</h4>
       
       <form class="form-horizontal" action="query.php" method="post">
         <fieldset>
           <div class="form-group">
-            <label class="col-2" for="street-num">Street number:</label>
-            <div class="col-10">
-              <input class="form-control" type="tel" id="street-num" name="street-num" value="300">
+            <label class="col-2" for="street-num">Home address:</label>
+            <div class="col-6">
+              <input class="form-control" type="text" id="street-num" name="street-num" placeholder="218 16th Street">
             </div>
           </div>
 
           <div class="form-group">
-            <label class="col-2" for="street">Street:</label>
-            <div class="col-10">
-              <input class="form-control" type="tel" id="street" name="street" value="W 23rd St">
+            <label class="col-2" for="state">City:</label>
+            <div class="col-6">
+                <input class="form-control" type="Text" id="city" name="city" placeholder="New York City">
             </div>
           </div>
 
-          <div class="form-group">
-            <label class="col-2" for="street">City:</label>
-            <div class="col-10">
-              <input class="form-control" type="text" id="city" name="city" value="New York">
-            </div>
-          </div>
 
           <div class="form-group">
             <label class="col-2" for="state">State:</label>
-            <div class="col-10">
+            <div class="col-6">
 
               <?php
 
-                  $states_arr = array('KS'=>"Kansas",'NY' => "New York");
+                  $states_arr = array('NY' => "New York");
 
                   function showOptionsDrop($array, $active, $echo=true){
                       $string = '';
@@ -81,9 +81,9 @@
           </div>
 
           <div class="form-group">
-            <label class="col-2" for="phone">Phone number:</label>
-            <div class="col-10">
-              <input class="form-control" type="tel" id="phone" name="phone" placeholder="555-555-5555">
+            <label class="col-2" for="state">Zip Code:</label>
+            <div class="col-2">
+                <input class="form-control" type="text" id="zip" name="zip" placeholder="11211">
             </div>
           </div>
 
@@ -129,7 +129,7 @@
 
             $(document).ready(function() {
               $("#slider-range").slider({
-                range: true, min: 420, max: 1260, values: [900, 1020], step:5, slide: slideTime
+                range: true, min: 350, max: 1260, values: [900, 1020], step:5, slide: slideTime
                 });
 
               $("#time").text("3:00 PM" + ' - ' + "5:00 PM");
@@ -138,7 +138,7 @@
           </script>
 
           <div class="form-group">
-            <label class="col-12" for="time-range">When do you plan to vote on election day?</label><br>
+            <label class="col-12" for="time-range">When do you want to vote?</label><br>
             <div id="slider-range" class="col-4"></div><br>
             <span id="time"></span>
 
@@ -147,19 +147,19 @@
           </div>
 
           <div class="form-group">
-            <p class="col-12" class="help-block">How should we update you?</p>
+            <label class="col-12" class="help-block">Are you registered to vote?</label>
+              <label class="checkbox-inline col-2">
+                <input type="radio" name="notify" value="yes"> Yes </input>
+              </label>
+              <label class="checkbox-inline col-2">
+                <input type="radio" name="notify" value="no"> No </input>
+              </label>
               <label class="checkbox-inline col-3">
-                <input type="checkbox" name="notify" value="email"> E-mail </input>
-              </label>
-              <label class="checkbox-inline col-2">
-                <input type="checkbox" name="notify" value="SMS"> SMS </input>
-              </label>
-              <label class="checkbox-inline col-2">
-                <input type="checkbox" name="notify" value="push"> Push notification </input>
+                <input type="radio" name="notify" value="idk"> I don't know </input>
               </label>
           </div>
 
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="submit" class="btn btn-primary">Done</button>
 
         </fieldset>
         

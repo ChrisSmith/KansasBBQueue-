@@ -1,3 +1,8 @@
+<?php 
+/* Import API */
+require_once('api.php'); 
+?>
+
 <html lang="en">
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,7 +23,35 @@
                 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 
 		<?php $addressstring = $_POST["street-num"]." ".$_POST["street"]." ".$_POST["city"]." ".$_POST["state"]; ?>
-
+		
+        <?php
+			$connect = connectDB();
+			
+			$google_location = "";//chris's function
+			
+			$past = translateTimeStamp(getHourlyTimestamp());
+			$present = $start = translateTimeStamp(getCurrentTimestamp());
+			
+			$query = "SELECT `people_count`,`booth_count` FROM `time_present` WHERE `time` BETWEEN '$past' AND '$present'";	
+			
+			$result = mysqli_query($connect,$query);
+			
+			$people_count = NULL;
+			$people_instance = NULL;
+			$booth_count = NULL;
+			$booth_instance = NULL;
+			$counter = 0;
+			while($row = mysqli_fetch_array($result, MYSQLI_BOTH)) { 
+				$counter++;
+				$people_count += $row['people_count'];
+				$booth_count += $row['booth_count'];
+			}
+			$people_instance = $counter;
+			$booth_instance = $counter;
+			
+			$waittime = getWaitTime($people_count, $people_instance, $booth_count, $booth_instance, $votingavg)
+		?>
+		
 		<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
                 <script type="text/javascript" src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
@@ -50,6 +83,7 @@
 		var myDictionary = [];
 		//myDictionary["electionid"] = "<?php echo $_POST['electionid']; ?>";
 		myDictionary["address"] = "<?php echo $addressstring; ?>";
+                myDictionary['address'] = '321 W. 54th St, New York NY'
 
 		address_bits = myDictionary['address'].split(' ');
 		var query_string = '';
@@ -172,8 +206,7 @@
 	<div class="container">
 		<div class="row">
 
-		    <img id="logo" src="img/bbq.svg">
-			<div class="col-12"><h1>What's your wait?</h1></div>
+			<div class="col-12"><h1>Your Polling Place:</h1></div>
 		</div>
 
 	<div class="row">
@@ -187,6 +220,7 @@
 
 		</div>
 		<div class='col-12' id="map"></div>
+                <div class="col-12"><h1>What's your wait?</h1></div>
 		<div class='col-12' id="chart"><svg></svg></div>
 
 	</div>
