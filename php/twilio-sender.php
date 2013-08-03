@@ -56,7 +56,7 @@ class twilioSender {
 				$poll_location = $lookupRes['pollingLocations'][0];
 				//save loc / get locationId
 				$addr = $poll_location['address'];
-				$location = $addr['locationName']
+				$location = $addr['locationName'] . ', '
 					. $addr['line1'] . ', '
     				. $addr['city'] . ', '
     				. $addr['state'] . ', '

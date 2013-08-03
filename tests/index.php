@@ -86,13 +86,32 @@ $sender = new twilioSender($lastMsg, $from, $db);
 		$db->location = "PS 33, 281 9 Avenue, New York, NY, 10001";
 		$sender->lastMsg = Messages::Help;
 	?>
-	<div class="bold"><?php echo $sender->getResponseType("65") ?> </div> <div><?php echo Messages::ReportTimes; ?> </div>
-	<div class="bold"><?php echo $db->numPeople ?> </div> <div><?php echo 65 ?> </div>
-	<div class="bold"><?php echo $db->phone ?> </div> <div><?php echo $from ?> </div>
-		
+	<div class="bold"><?php echo $sender->getResponseType("c") ?> </div> <div><?php echo Messages::ReportTimes; ?> </div>		
 </div>	
 
+<div>
+	<?php 
+		$db->reset();
+		$db->location = "PS 33, 281 9 Avenue, New York, NY, 10001";
+		$sender->lastMsg = Messages::ReportTimes;
+	?>
+	<div class="bold"><?php echo $sender->getResponseType("65") ?> </div> <div><?php echo Messages::ReportBooths; ?> </div>
+	<div class="bold"><?php echo $db->numPeople ?> </div> <div><?php echo 65 ?> </div>
+	<div class="bold"><?php echo $db->phone ?> </div> <div><?php echo $from ?> </div>
+	
+</div>
+	
 
+<div class="bold">Report Booths</div>
+<div>
+	<?php 
+		$db->reset();
+		$db->location = "PS 33, 281 9 Avenue, New York, NY, 10001";
+		$sender->lastMsg = Messages::Help;
+	?>
+	<div class="bold"><?php echo $sender->getResponseType("t") ?> </div> <div><?php echo Messages::GetTimes; ?> </div>		
+	
+</div>	
 
 </body>
 </html>
