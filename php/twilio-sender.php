@@ -40,7 +40,7 @@ class twilioSender {
 			    $text
 			);
 			
-		}catch(){
+		}catch(Exception $e){
 			//sms failed :(
 		}
 	}
