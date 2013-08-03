@@ -5,6 +5,16 @@ require __DIR__.'/twillio-config.php';
 require __DIR__.'/php/database.php';
 require __DIR__.'/polls.php';
 
+class Messages
+{
+    const WhatsYourAddress = 0;
+    const ReportTimes = 1;
+    const ReportBooths = 1;
+    const GetTimes = 2;
+    const Thanks = 3;
+    const Unknown = 4;
+    const Help = 5;
+}
 
 class twilioSender {
 
@@ -20,17 +30,6 @@ class twilioSender {
 		$this->polls = new Polls();
 	}
 	
-	class Messages
-	{
-	    const WhatsYourAddress = 0;
-	    const ReportTimes = 1;
-	    const ReportBooths = 1;
-	    const GetTimes = 2;
-	    const Thanks = 3;
-	    const Unknown = 4;
-	    const Help = 5;
-	}
-
 	function sendSms($text, $msgType){
 
 		$client = new Services_Twilio($AccountSid, $AuthToken);
