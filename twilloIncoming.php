@@ -15,7 +15,8 @@ if(isset($_SESSION['lastMsg'])){
 $from = $_REQUEST['From'];
 
 $db = new database();
-$sender = new twilioSender($lastMsg, $from, $db);
+
+$sender = new twilioSender($lastMsg, $from, $db, $AccountSid, $AuthToken);
 
 $respType = $sender->getResponseType($body);
 $respText = $sender->getReponseText($respType);	

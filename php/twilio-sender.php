@@ -22,17 +22,21 @@ class twilioSender {
 	private $fromPhone;
 	private $db;
 	private $polls;
+	private $sid;
+	private $auth;
 
-	public function __construct($lastMsg, $from, $db){
+	public function __construct($lastMsg, $from, $db, $sid, $auth){
 		$this->lastMsg = $lastMsg;
 		$this->fromPhone = $from;
 		$this->db = $db;
 		$this->polls = new Polls();
+		$this->sid = $sid;
+		$this->auth = $auth;
 	}
 	
 	function sendSms($text){
 
-		$client = new Services_Twilio($AccountSid, $AuthToken);
+		$client = new Services_Twilio($this->sid, $this->auth);
 		try{
 			$sms = $client->account->sms_messages->create(
 			    "18563474227", // From this number
