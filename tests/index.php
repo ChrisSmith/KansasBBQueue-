@@ -57,9 +57,9 @@ $sender = new twilioSender($lastMsg, $from, $db);
 		$db->reset();
 		$db->location = "300 W 23rd St New York NY";
 		$sender->lastMsg = Messages::WhatsYourAddress;
-		echo $sender->getResponseType("time") == Messages::GetTimes; 
-		echo $db->pollingLoc == "PS 33, 281 9 Avenue, New York, NY, 10001";
 	?>
+	<div><?php echo $sender->getResponseType("time") ?> </div> <div><?php echo Messages::GetTimes; ?> </div>
+	<div><?php echo $db->pollingLoc ?> </div> <div><?php echo "PS 33, 281 9 Avenue, New York, NY, 10001" ?> </div>
 </div>
 
 <div>
@@ -67,9 +67,9 @@ $sender = new twilioSender($lastMsg, $from, $db);
 		$db->reset();
 		$db->location = "300 W 23rd St New York NY";
 		$sender->lastMsg = Messages::GetTimes;
-		echo $sender->getResponseType("time") == Messages::GetTimes; 
-		echo $db->pollingLoc == "PS 33, 281 9 Avenue, New York, NY, 10001";
 	?>
+	<div><?php echo $sender->getResponseType("time") ?> </div> <div><?php echo Messages::GetTimes; ?> </div>
+	<div><?php echo $db->pollingLoc ?> </div> <div><?php echo "PS 33, 281 9 Avenue, New York, NY, 10001" ?> </div>	
 </div>
 
 <div>Report Times</div>
@@ -78,11 +78,12 @@ $sender = new twilioSender($lastMsg, $from, $db);
 		$db->reset();
 		$db->location = "300 W 23rd St New York NY";
 		$sender->lastMsg = Messages::WhatsYourAddress;
-		echo $sender->getResponseType("65") == Messages::ReportBooths; 
-		echo $db->numPeople != 65;
-		echo $db->phone == $from;
-		
+	
 	?>
+	<div><?php echo $sender->getResponseType("65") ?> </div> <div><?php echo Messages::ReportBooths; ?> </div>
+	<div><?php echo $db->numPeople ?> </div> <div><?php echo 65 ?> </div>
+	<div><?php echo $db->phone ?> </div> <div><?php echo $from ?> </div>
+		
 </div>
 
 
