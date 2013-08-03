@@ -69,12 +69,10 @@ class Database {
 		$connection = connectDB();
 		
 		$query = "INSERT IGNORE INTO `polling` (`polling`) VALUES ('".mysql_real_escape_string($address)."');";
-		var_dump($query);
-
+	
 		mysqli_query($connection, $query);
 		
 		$query = "SELECT `polling_id` FROM `polling` WHERE `polling` = '".mysql_real_escape_string($address)."'";
-		var_dump($query);
 		$result = mysqli_query($connection, $query);
 		
 		$row = mysqli_fetch_array($result, MYSQLI_BOTH);
@@ -82,18 +80,11 @@ class Database {
 		//echo $polling_id;
 		
 		$query = "UPDATE `profile` SET  `polling_id` =  '$polling_id' WHERE  `phone` = '$phone';";
-		var_dump($query);
-		
+	
 		mysqli_query($connection, $query);
 		
 		mysqli_close($connection);
-		
-
-
-		var_dump($polling_id);
-		var_dump($phone);
-		var_dump($address);
-
+	
 		return 0;
 	}
 

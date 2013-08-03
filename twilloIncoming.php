@@ -4,7 +4,6 @@ require __DIR__.'/php/twilio-sender.php';
 
 session_start();
 
-var_dump($_REQUEST);
 
 $body = $_REQUEST['Body'];
 
