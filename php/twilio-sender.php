@@ -72,7 +72,7 @@ class twilioSender {
 			}
 		}
 
-		if($location == null){
+		if(empty($location)){
 			return Messages::WhatsYourAddress;	
 		}
 
@@ -118,7 +118,8 @@ class twilioSender {
 				return "Great, how many booths did they have?";
 			case Messages::Thanks:
 				return "Thanks, tell your friends!";
-
+			case Messages::WhatsYourAddress:
+				return "Where do you live?";
 			default:
 			case Messages::Unknown:
 				return "Sorry we didn't understand that";
