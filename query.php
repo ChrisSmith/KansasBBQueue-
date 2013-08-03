@@ -5,12 +5,6 @@ include 'welcome.php';
 $electionyear = '2013';
 $electionmonth = '09';
 $electionday = '10';
-$electionstarttimehour = '02';
-$electionstarttimemin = '30';
-$electionstarttimesec = '00';
-$electionendtimehour = '17';
-$electionendtimemin = '22';
-$electionendtimesec = '00';
 
 $startTime = setDate($electionyear, $electionmonth, $electionday, $electionstarttimehour, $electionstarttimemin, $electionstarttimesec);
 $endTime = setDate($electionyear, $electionmonth, $electionday, $electionendtimehour, $electionendtimemin, $electionendtimesec);
@@ -56,11 +50,11 @@ echo "<br>".getCurrentTimestamp();
 	
 	//variables to get
 	$phone = "";
-	$address = ""; //this one might be a combination of fields
-	$polling = "";
-	$day = "";
-	$start = "";
-	$end = "";
+	$address = userAddress(); //this one might be a combination of fields
+	$polling = pollingLocation();
+	$day = "2013-09-10";
+	$start = getCurrentTimestamp();
+	$end = getCurrentTimestamp();
 	
 	//variables to get from insertions
 	$polling_id = "";
