@@ -11,6 +11,7 @@ class mockdb {
 	public $pollingLoc;
 	public $phone;
 	public $numPeople;
+	public $numBooths;
 
 	public function reset(){
 		$this->location = null;
@@ -30,6 +31,11 @@ class mockdb {
 	public function checkIn($phone, $num){
 		$this->phone = $phone;
 		$this->numPeople = $num;
+	}
+
+	public function reportBooth($phone, $num){
+		$this->phone = $phone;
+		$this->numBooths = $num;	
 	}
 }
 
@@ -101,8 +107,7 @@ $sender = new twilioSender($lastMsg, $from, $db);
 	
 </div>
 	
-
-<div class="bold">Report Booths</div>
+<div class="bold">Get Times</div>
 <div>
 	<?php 
 		$db->reset();
@@ -110,8 +115,22 @@ $sender = new twilioSender($lastMsg, $from, $db);
 		$sender->lastMsg = Messages::Help;
 	?>
 	<div class="bold"><?php echo $sender->getResponseType("t") ?> </div> <div><?php echo Messages::GetTimes; ?> </div>		
-	
 </div>	
+
+	
+<div class="bold">Report Booths</div>
+<div>
+	<?php 
+		$db->reset();
+		$db->location = "PS 33, 281 9 Avenue, New York, NY, 10001";
+		$sender->lastMsg = Messages::ReportBooths;
+	?>
+	<div class="bold"><?php echo $sender->getResponseType("3") ?> </div> <div><?php echo Messages::Thanks; ?> </div>
+	<div class="bold"><?php echo $db->numBooths ?> </div> <div><?php echo 3 ?> </div>
+	<div class="bold"><?php echo $db->phone ?> </div> <div><?php echo $from ?> </div>
+</div>	
+
+
 
 </body>
 </html>

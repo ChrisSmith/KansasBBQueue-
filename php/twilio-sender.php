@@ -93,8 +93,7 @@ class twilioSender {
 				
 			}else if($this->lastMsg == Messages::ReportBooths && is_numeric($body)){
 				$int = intval($body);
-				// $this->db->checkIn($this->fromPhone, $int);
-				
+				$this->db->reportBooth($this->fromPhone, $int);
 				return Messages::Thanks;		
 			}else{
 				return Messages::Unknown;
