@@ -7,7 +7,6 @@ ini_set('display_errors', '1');
 
 class mockdb {
 
-	
 	public $location;
 	public $pollingLoc;
 	public $phone;
@@ -66,9 +65,12 @@ $sender = new twilioSender($lastMsg, $from, $db);
 		$db->reset();
 		$db->location = "300 W 23rd St New York NY";
 		$sender->lastMsg = Messages::WhatsYourAddress;
+		var_dump($db);
 	?>
 	<div class="bold"><?php echo $sender->getResponseType("time") ?> </div> <div><?php echo Messages::GetTimes; ?> </div>
 	<div class="bold"><?php echo $db->pollingLoc ?> </div> <div><?php echo "PS 33, 281 9 Avenue, New York, NY, 10001" ?> </div>
+	<?php var_dump($db); ?>
+	<?php var_dump($sender); ?>
 </div>
 
 <div>
@@ -81,7 +83,7 @@ $sender = new twilioSender($lastMsg, $from, $db);
 	<div class="bold"><?php echo $db->pollingLoc ?> </div> <div><?php echo "PS 33, 281 9 Avenue, New York, NY, 10001" ?> </div>	
 </div>
 
-<div>Report Times</div>
+<div class="bold">Report Times</div>
 <div>
 	<?php 
 		$db->reset();
