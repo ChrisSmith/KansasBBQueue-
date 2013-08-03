@@ -1,6 +1,6 @@
 <?php
 
-require __DIR__.'/php/twilio-sender.php';
+require __DIR__.'../php/twilio-sender.php';
 
 class mockdb {
 
