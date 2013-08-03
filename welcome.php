@@ -1,14 +1,6 @@
-<html>
-<body>
-
-Welcome <?php echo $_POST["fname"]; echo " " . $_POST["lname"]; ?>!<br>
-You are <?php echo $_POST["street"]; ?> years old.<br>
-You live at <?php echo $_POST["street-num"] . " " . $_POST["street"]; ?> in <?php echo $_POST["state"] ?>.<br>
-Notify by <?php echo $_POST["notify"]; ?>
 
 
-</body>
-</html>
+
 
 
 
@@ -130,17 +122,17 @@ $jsonurl = "https://www.googleapis.com/civicinfo/us_v1/elections?key=AIzaSyB_BhJ
 $json = json_decode(file_get_contents($jsonurl),true);
 //print_r($json);
 
-
-
-
-
-
-
     ?>
-    
+    <?php
+    echo $_POST["street-num"].$_POST["street"].$_POST["state"];
+    ?>
+<!-- 
 
+ Welcome <?php echo $_POST["fname"]; echo " " . $_POST["lname"]; ?>!<br>
+You are <?php echo $_POST["street"]; ?> years old.<br>
+You live at <?php echo $_POST["street-num"] . " " . $_POST["street"]; ?> in <?php echo $_POST["state"] ?>.<br>
+Notify by <?php echo $_POST["notify"]; ?> -->
 
- 
 <!-- <input type="button" value="Click me to POST" onclick="javascript:post(myDictionary, 'index.php');" /> -->
 
 

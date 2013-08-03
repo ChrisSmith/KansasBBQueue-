@@ -4,11 +4,9 @@
   	<meta name="viewport" content="width=device-width, initial-scale=1.0">
   	
   	<link rel="stylesheet" href="css/bootstrap.min.css"></link>
-    <link rel="stylesheet" href="css/jquery-ui.css"></link>
     <link rel="stylesheet" href="css/style.css"></link>
 
   	<script type="text/javascript" src="js/jquery.min.js"></script>
-    <script type="text/javascript" src="js/jquery-ui.js"></script>
   	<script type="text/javascript" src="js/bootstrap.min.js"></script>
   </head>
   <body>
@@ -92,57 +90,15 @@
             </div>
           </div>
 
-          <script>
-            var startTime;
-            var endTime;
-
-            function slideTime(event, ui){
-              console.log('hi');
-              var val0 = $("#slider-range").slider("values", 0),
-                val1 = $("#slider-range").slider("values", 1),
-                minutes0 = parseInt(val0 % 60, 10),
-                hours0 = parseInt(val0 / 60 % 24, 10),
-                minutes1 = parseInt(val1 % 60, 10),
-                hours1 = parseInt(val1 / 60 % 24, 10);
-                
-              startTime = getTime(hours0, minutes0);
-              endTime = getTime(hours1, minutes1);
-              $("#time").text(startTime + ' - ' + endTime);
-            }
-            function getTime(hours, minutes) {
-              var time = null;
-              minutes = minutes + "";
-              if (hours < 12) {
-                time = "AM";
-              }
-              else {
-                time = "PM";
-              }
-              if (hours == 0) {
-                hours = 12;
-              }
-              if (hours > 12) {
-                hours = hours - 12;
-              }
-              if (minutes.length == 1) {
-                minutes = "0" + minutes;
-              }
-              return hours + ":" + minutes + " " + time;
-            }
-
-            $(document).ready(function() {
-              $("#slider-range").slider({
-                range: true, min: 0, max: 2879, values: [540, 1020], step:5, slide: slideTime
-                });
-
-               $("#time").text("9:00 AM" + ' - ' + "5:00 PM");
-            });
-
-          </script>
           <div class="form-group">
-            <label class="col-12" for="time-range">When do you plan to vote?</label><br>
-            <div id="slider-range" class="col-4"></div><br>
-            <span id="time"></span>
+            <p class="col-12" class="help-block">When do you plan to vote?</p>
+            <label class="checkbox-inline col-2" for="date">Date:</label>
+                <input type="date" class="form-control col-3" name="day">
+              <label class="checkbox-inline col-2" for="start">Start time:</label>
+                <input type="time" class="form-control col-4" name="start">
+              <label class="checkbox-inline col-2" for="end">End time:</label>
+                <input type="time" class="form-control col-4" name="start">
+
           </div>
 
           <div class="form-group">
@@ -168,6 +124,5 @@
 	</div>
 
   </div>
-
 </body>
 </html>
