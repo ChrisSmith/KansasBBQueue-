@@ -186,7 +186,7 @@
 				</div>
 
 				<div class="form-group">
-					<label class="col-2" for="street">Number of pollling booths:</label>
+					<label class="col-2" for="street">Number of polling booths:</label>
 					<div class="col-10">
 					  <input class="form-control" type="number" id="street" name="street" value="12">
 					</div>
