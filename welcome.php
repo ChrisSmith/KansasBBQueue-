@@ -1,7 +1,9 @@
 <!doctype html>
 <html>
   <head>
+
   <?php
+  	
     $addressstring = $_POST["street-num"]." ".$_POST["street"]." ".$_POST["city"]." ".$_POST["state"];
     //var_dump($addressstring);
     ?>
@@ -67,7 +69,9 @@ function post(dictionary, url, method) {
        * @param {Object} rawResponse Raw response from the API.
        */
       function renderResults(response, rawResponse) {
+
         var el = document.getElementById('results');
+        //alert(el);
         if (!response || response.error) {
           el.appendChild(document.createTextNode(
               'Error while trying to fetch polling place'));
@@ -85,14 +89,15 @@ function post(dictionary, url, method) {
               pollingLocation.state + ' ' +
               pollingLocation.zip;
           var normEl = document.createElement('strong');
-          normEl.appendChild(document.createTextNode(
-              'Polling place for ' + normalizedAddress + ': '));
+          normEl.appendChild(document.createTextNode('Polling place for ' + normalizedAddress + ': '));
           el.appendChild(normEl);
           el.appendChild(document.createTextNode(pollingAddress));
+          
         } else {
           el.appendChild(document.createTextNode(
               'Could not find polling place for ' + normalizedAddress));
         }
+
       }
 
       /**
@@ -107,13 +112,12 @@ function post(dictionary, url, method) {
   </head>
   <body>
     <div id="results"></div>
+
     <br>
     <?php
    // $googleapi = "https://www.googleapis.com/civicinfo/us_v1/elections?key=<AIzaSyB_BhJr3sTC0FK6iq1nF5fuEosbLWQkynA>";
     //$xml=simplexml_load_file($googleapi);
     //print_r($xml);
-
-
 $jsonurl = "https://www.googleapis.com/civicinfo/us_v1/elections?key=AIzaSyB_BhJr3sTC0FK6iq1nF5fuEosbLWQkynA";
 $json = json_decode(file_get_contents($jsonurl),true);
 //print_r($json);
