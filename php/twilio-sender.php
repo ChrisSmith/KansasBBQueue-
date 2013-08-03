@@ -51,6 +51,7 @@ class twilioSender {
 
 		if ($location == null){
 			$lookupRes = $this->polls->locate($body);
+			var_dump($lookupRes);
 			if($lookupRes['status'] == 'success'){
 				$firstLoc = $result['pollingLocations'][0];
 				//save loc / get locationId
