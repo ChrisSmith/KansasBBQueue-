@@ -68,10 +68,10 @@
 						</div>
 
 						<div class="form-group">
-							<label class="checkbox-inline col-4">
+							<label class="checkbox-inline col-6">
 								<input type="radio" name="checkin" value="get"> Check your wait time </input>
 							</label>
-							<label class="checkbox-inline col-4">
+							<label class="checkbox-inline col-6">
 								<input type="radio" name="checkin" value="report"> Report your wait time </input>
 							</label>
 						</div>

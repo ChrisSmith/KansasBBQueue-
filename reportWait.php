@@ -48,22 +48,6 @@
 		//myDictionary["electionid"] = "<?php echo $_POST['electionid']; ?>";
 		myDictionary["address"] = "<?php echo $addressstring; ?>";
 
-		address_bits = myDictionary['address'].split(' ');
-		var query_string = '';
-
-		for (var i=0 ; i<address_bits.length; i++) {
-			if (i==address_bits.length-1) {
-				query_string = query_string + address_bits[i];
-			}
-			else {
-				query_string = query_string + address_bits[i] + '+';
-			}
-		}
-		var base = 'http://maps.googleapis.com/maps/api/geocode/json?address=';
-		var tail = '&sensor=true';
-
-		var geocode_url = base+query_string+tail;
-
 		$(document).ready(function(){
 			var map,
 			geocoder = new google.maps.Geocoder(),
@@ -90,9 +74,8 @@
 		    });
 
 		    map = new google.maps.Map(document.getElementById('map'), myOptions);
-		    console.log('yea');
 
-		});	   
+		});
 
 
 		/**
