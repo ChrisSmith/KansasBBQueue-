@@ -51,7 +51,7 @@ class twilioSender {
 	}
 
 	function getResponseType($body){
-
+		$body = strtolower($body);
 		$location = $this->db->getLocationForUser($this->fromPhone);
 		
 		if ($location == null){
