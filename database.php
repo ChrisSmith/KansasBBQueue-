@@ -84,6 +84,10 @@ class Database {
 		
 		mysqli_close($connection);
 		
+		var_dump($polling_id);
+		var_dump($phone);
+		var_dump($address);
+
 		return 0;
 	}
 
