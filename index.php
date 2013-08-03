@@ -48,7 +48,7 @@
           <div class="form-group">
             <label class="col-2" for="state">City:</label>
             <div class="col-6">
-                <input class="form-control" type="Text" id="street-num" name="city" placeholder="New York City">
+                <input class="form-control" type="Text" id="city" name="city" placeholder="New York City">
             </div>
           </div>
 

@@ -3,12 +3,15 @@ $(document).ready(function() {
     var chart = nv.models.lineWithFocusChart();
 
     chart.xAxis
+        .axisLabel('Average wait time (min)')
         .tickFormat(d3.format(',f'));
 
     chart.yAxis
+        .axisLabel('Time of day')
         .tickFormat(d3.format(',f'));
 
     chart.y2Axis
+        .axisLabel('Time of day')
         .tickFormat(d3.format(',f'));
 
     d3.select('#chart svg')
@@ -45,9 +48,9 @@ $(document).ready(function() {
  }
 
  function testData() {
-  return stream_layers(3,128,.1).map(function(data, i) {
+  return stream_layers(1,128,.9).map(function(data, i) {
     return {
-      key: 'PS ' + i,
+      key: 'PS 111',
       values: data
     };
     });

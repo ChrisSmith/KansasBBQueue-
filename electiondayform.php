@@ -81,7 +81,7 @@
 								<input type="radio" name="checkin" value="report"> Report your wait time </input>
 							</label>
 						</div>
-				          
+
 						<button id="submit" type="submit" class="btn btn-primary">Submit</button>
 
 						<script>
