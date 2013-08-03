@@ -7,7 +7,6 @@ require_once('api.php');
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="css/bootstrap.min.css"></link>
-		<link rel="stylesheet" href="css/nv.d3.css"></link>
 		<link rel="stylesheet" href="css/style.css"></link>
 
 		<style>
@@ -20,7 +19,7 @@ require_once('api.php');
 		<script type="text/javascript" src="js/jquery.min.js"></script>
 		<script type="text/javascript" src="js/bootstrap.min.js"></script>
 
-                <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 
 		<?php $addressstring = $_POST["street-num"]." ".$_POST["street"]." ".$_POST["city"]." ".$_POST["state"]; ?>
 		
@@ -49,14 +48,16 @@ require_once('api.php');
 			$people_instance = $counter;
 			$booth_instance = $counter;
 			
-			$waittime = getWaitTime($people_count, $people_instance, $booth_count, $booth_instance, $votingavg)
+			$waittime = getWaitTime($people_count, $people_instance, $booth_count, $booth_instance, 9.5);
+			
+			$peopleavg = $people_count/$people_instance;
+			$waittime = round ($waittime,2,PHP_ROUND_HALF_UP);
+			
+			echo "<script> var people = ".$peopleavg." <br> var wait = ".$waittime."</script>";
 		?>
 		
 		<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-                <script type="text/javascript" src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-                <script type="text/javascript" src="js/nv.d3.min.js" charset="utf-8"></script>
-		<script type="text/javascript" src="js/viz.js"></script>
 		<script language="javascript">
 		function post(dictionary, url, method) {
 		method = method || "post"; // post (set to default) or get
@@ -69,6 +70,7 @@ require_once('api.php');
 		// For each key-value pair
 		for (key in dictionary) {
 		    alert('key: ' + key + ', value:' + dictionary[key]); // debug
+		    
 		    var hiddenField = document.createElement("input");
 		    hiddenField.setAttribute("type", "hidden"); // 'hidden' is the less annoying html data control
 		    hiddenField.setAttribute("name", key);
@@ -83,7 +85,6 @@ require_once('api.php');
 		var myDictionary = [];
 		//myDictionary["electionid"] = "<?php echo $_POST['electionid']; ?>";
 		myDictionary["address"] = "<?php echo $addressstring; ?>";
-                myDictionary['address'] = '321 W. 54th St, New York NY'
 
 		address_bits = myDictionary['address'].split(' ');
 		var query_string = '';
@@ -206,7 +207,8 @@ require_once('api.php');
 	<div class="container">
 		<div class="row">
 
-			<div class="col-12"><h1>Your Polling Place:</h1></div>
+		    <img id="logo" src="img/bbq.svg">
+			<div class="col-12"><h1>What's your wait?</h1></div>
 		</div>
 
 	<div class="row">
@@ -220,8 +222,6 @@ require_once('api.php');
 
 		</div>
 		<div class='col-12' id="map"></div>
-                <div class="col-12"><h1>What's your wait?</h1></div>
-		<div class='col-12' id="chart"><svg></svg></div>
 
 	</div>
 
