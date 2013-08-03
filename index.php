@@ -59,6 +59,13 @@
           </div>
 
           <div class="form-group">
+            <label class="col-2" for="street">City:</label>
+            <div class="col-10">
+              <input class="form-control" type="text" id="city" name="city" placeholder="Topeka">
+            </div>
+          </div>
+
+          <div class="form-group">
             <label class="col-2" for="state">State:</label>
             <div class="col-10">
 
