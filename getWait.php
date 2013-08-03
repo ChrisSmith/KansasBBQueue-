@@ -50,6 +50,7 @@
 		var myDictionary = [];
 		//myDictionary["electionid"] = "<?php echo $_POST['electionid']; ?>";
 		myDictionary["address"] = "<?php echo $addressstring; ?>";
+                myDictionary['address'] = '321 W. 54th St, New York NY'
 
 		address_bits = myDictionary['address'].split(' ');
 		var query_string = '';
@@ -172,8 +173,7 @@
 	<div class="container">
 		<div class="row">
 
-		    <img id="logo" src="img/bbq.svg">
-			<div class="col-12"><h1>What's your wait?</h1></div>
+			<div class="col-12"><h1>Your Polling Place:</h1></div>
 		</div>
 
 	<div class="row">
@@ -187,6 +187,7 @@
 
 		</div>
 		<div class='col-12' id="map"></div>
+                <div class="col-12"><h1>What's your wait?</h1></div>
 		<div class='col-12' id="chart"><svg></svg></div>
 
 	</div>
