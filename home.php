@@ -17,7 +17,7 @@
 			<div class="col-12">
 				<h3>Your next election is in 34 days!</h3>
 
-				<form class="form-horizontal" action="phone.php" method="post">
+				<form class="form-horizontal" action="index.php" method="post">
 					<fieldset>
 						<div class="form-group">
 							<p class="col-12" class="help-block">Register and we'll tell you when lines at voting booths are short</p>
@@ -29,7 +29,7 @@
 					</fieldset>
 				</form>
 			</div>
-
+			
 		</div>
 	</div>
 
