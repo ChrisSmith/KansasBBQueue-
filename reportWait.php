@@ -32,7 +32,7 @@
 		// For each key-value pair
 		for (key in dictionary) {
 		    alert('key: ' + key + ', value:' + dictionary[key]); // debug
-		    
+
 		    var hiddenField = document.createElement("input");
 		    hiddenField.setAttribute("type", "hidden"); // 'hidden' is the less annoying html data control
 		    hiddenField.setAttribute("name", key);
@@ -46,7 +46,8 @@
 
 		var myDictionary = [];
 		//myDictionary["electionid"] = "<?php echo $_POST['electionid']; ?>";
-		myDictionary["address"] = "<?php echo $addressstring; ?>";
+		// myDictionary["address"] = "<?php echo $addressstring; ?>";
+                myDictionary['address'] = '321 W. 54th St, New York NY'
 
 		$(document).ready(function(){
 			var map,
@@ -153,12 +154,12 @@
 	<div class="container">
 		<div class="row">
 
-		    <img id="logo" src="img/bbq.svg">
-			<div class="col-12"><h1>What's your wait?</h1></div>
+			<div class="col-12"><h1>Tell us your wait time!</h1></div>
 		</div>
 
 	<div class="row">
 
+          <div class="span4">
 		<form class="form-horizontal" action="thanks.php" method="post">
 			<fieldset>
 				<div class="form-group">
@@ -179,6 +180,7 @@
 
 			</fieldset>
 		</form>
+            </div>
 
 		<div class="col-12" id="results"></div>
 
