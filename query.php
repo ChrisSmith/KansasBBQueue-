@@ -1,7 +1,15 @@
 <?php 
 /* Import API */
 //require_once('api.php'); 
+include 'welcome.php';
+echo userAddress();
+echo pollingLocation();
+echo "<br>Start". $_POST['startTime'];
+echo "<br>End". $_POST['endTime'];
+
 ?>
+
+
 
 <?php
 /*

@@ -2,3 +2,7 @@
 	float: left;
 	width: 100px;
 }
+
+#chart {
+  height: 500px;
+}
