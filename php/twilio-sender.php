@@ -54,8 +54,10 @@ class twilioSender {
 		$body = strtolower($body);
 		$location = $this->db->getLocationForUser($this->fromPhone);
 		
-		if ($location == null){
+		if (empty($location)){
 			$lookupRes = $this->polls->locate($body);
+
+			var_dump($lookupRes);
 
 			if($lookupRes['status'] == 'success'){
 				$poll_location = $lookupRes['pollingLocations'][0];
@@ -67,7 +69,9 @@ class twilioSender {
     				. $addr['state'] . ' '
     				. $addr['zip'];
     			//$poll_location['pollingHours'];
-    			$this->db->insertPollingAddress($this->fromPhone, $location);
+    			
+    			$phone = $this->fromPhone;
+    			$this->db->insertPollingAddress($phone, $location);
     			return Messages::Help;	
 			}
 		}
