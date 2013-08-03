@@ -18,6 +18,8 @@ $db = new database();
 
 $sender = new twilioSender($lastMsg, $from, $db, $AccountSid, $AuthToken);
 
+var_dump($body);
+
 $respType = $sender->getResponseType($body);
 $respText = $sender->getReponseText($respType);	
 $sender->sendSms($respText);
