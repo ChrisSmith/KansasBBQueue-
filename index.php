@@ -8,7 +8,7 @@
   	<script type="text/javascript" src="/js/jquery.min.js" />
   	<script type="text/javascript" src="/js/bootstrap.min.js" />
   </head>
-
+  <body>
   <div class="container">
 
 	<div class="row">
@@ -16,5 +16,5 @@
 	</div>
 
   </div>
-
+</body>
 </html>
