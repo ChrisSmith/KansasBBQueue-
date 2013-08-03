@@ -6,10 +6,6 @@ $db = new database();
 
 $client = new Services_Twilio($AccountSid, $AuthToken);
 
-for(){
-	
-}
-
 try {
 
     $sms = $client->account->sms_messages->create(

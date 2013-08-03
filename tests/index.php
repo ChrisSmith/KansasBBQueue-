@@ -39,10 +39,11 @@ class mockdb {
 	}
 }
 
+
 $db = new mockdb();
 $from = "2153456789";
 $lastMsg = Messages::WhatsYourAddress;
-$sender = new twilioSender($lastMsg, $from, $db);
+$sender = new twilioSender($lastMsg, $from, $db, $AccountSid, $AuthToken);
 
 ?>
 
