@@ -86,8 +86,7 @@ class Database {
 		
 		$query = "SELECT `phone` FROM `profile` ";
 		$result = mysqli_query($connection, $query);
-		
-		$phones=array("red","green");
+		$phones = array();
 		
 		while($row = mysqli_fetch_array($result))
 	  	{
