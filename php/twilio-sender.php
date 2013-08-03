@@ -87,13 +87,12 @@ class twilioSender {
 			if($lastMsg == Messages::ReportTimes && is_numeric($body)){
 				$int = intval($body)
 				// $this->db->()
-
 				return Messages::ReportBooths;
-				, );
-
+				
 			}else if($lastMsg == Messages::ReportBooths && is_numeric($body)){
 				$int = intval($body)
-
+				// $this->db->()
+				
 				return Messages::Thanks;		
 			}else{
 				return Messages::Unknown;
