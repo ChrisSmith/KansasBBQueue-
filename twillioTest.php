@@ -1,17 +1,17 @@
 <?php
 
-require __DIR__.'/php/twilio-php/Services/Twilio.php';
-require __DIR__.'/twillio-config.php';
+require __DIR__.'/php/twilio-sender.php';
 
-/*
-Defined in twillio-config.php
-$AccountSid = "";
-$AuthToken = "";
-*/
+$db = new database();
 
 $client = new Services_Twilio($AccountSid, $AuthToken);
- 
+
+for(){
+	
+}
+
 try {
+
     $sms = $client->account->sms_messages->create(
         "", // From this number
         "", // To this number

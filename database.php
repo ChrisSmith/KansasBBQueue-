@@ -79,5 +79,22 @@ class Database {
 		
 		return 0;
 	}
+
+	public function getPhones($phone) {
+		$connection = connectDB();
+		
+		$query = "SELECT `phone` FROM `profile` ";
+		$result = mysqli_query($connection, $query);
+		
+		$phones=array("red","green");
+		
+		while($row = mysqli_fetch_array($result))
+	  	{
+	  		array_push($phones, $row['phone']);
+	  	}
+		
+		mysqli_close($connection);
+		return $phones;
+	}
 }
 ?>
