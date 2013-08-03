@@ -16,7 +16,7 @@
 
 			<div class="col-12">
 							
-				<form class="form-horizontal" action="phone.php" method="post">
+				<form class="form-horizontal" method="post">
 					<fieldset>
 						<div class="form-group">
 							<p class="col-12" class="help-block">Check the wait time at your polling place or, if you're in line, tell us how long your wait is.</p>
