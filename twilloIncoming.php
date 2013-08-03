@@ -15,8 +15,8 @@ if($lastMsg == null){
 $db = new database();
 $sender = new twilioSender($lastMsg, $from, $db);
 
-$respType = $sender.getResponseType($body);
-$respText = $sender.getReponseText($respType);	
+$respType = $sender->getResponseType($body);
+$respText = $sender->getReponseText($respType);	
 $_SESSION['lastMsg'] = $respType;
 
 ?>
