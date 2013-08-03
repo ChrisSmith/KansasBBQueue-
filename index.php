@@ -132,15 +132,15 @@
 
             $(document).ready(function() {
               $("#slider-range").slider({
-                range: true, min: 0, max: 2879, values: [540, 1020], step:5, slide: slideTime
+                range: true, min: 420, max: 1260, values: [900, 1020], step:5, slide: slideTime
                 });
 
-               $("#time").text("9:00 AM" + ' - ' + "5:00 PM");
+              $("#time").text("3:00 PM" + ' - ' + "5:00 PM");
             });
 
           </script>
           <div class="form-group">
-            <label class="col-12" for="time-range">When do you plan to vote?</label><br>
+            <label class="col-12" for="time-range">When do you plan to vote on election day?</label><br>
             <div id="slider-range" class="col-4"></div><br>
             <span id="time"></span>
           </div>
