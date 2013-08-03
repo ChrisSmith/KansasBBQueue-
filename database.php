@@ -68,7 +68,7 @@ class Database {
 	public function insertPollingAddress($phone, $address) {
 		$connection = connectDB();
 		
-		$query = "INSERT IGNORE INTO `polling` (`polling`) VALUES (".mysql_real_escape_string($address).";";
+		$query = "INSERT IGNORE INTO `polling` (`polling`) VALUES ('".mysql_real_escape_string($address)."');";
 		
 		mysqli_query($connection, $query);
 		$polling_id = get_inserted_id($connection, $query);
