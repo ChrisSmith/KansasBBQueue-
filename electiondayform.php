@@ -11,11 +11,10 @@
 	<div class="container">
 		<div class="row">
 
-		    <img id="logo" src="img/bbq.svg">
 			<div class="col-8"><h1>Happy election day!</h1></div>
 
 			<div class="col-12">
-							
+
 				<form class="form-horizontal" method="post">
 					<fieldset>
 						<div class="form-group">
@@ -75,7 +74,7 @@
 								<input type="radio" name="checkin" value="report"> Report your wait time </input>
 							</label>
 						</div>
-				          
+
 						<button id="submit" type="submit" class="btn btn-primary">Submit</button>
 
 						<script>
