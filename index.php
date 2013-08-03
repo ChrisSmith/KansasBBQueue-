@@ -33,42 +33,23 @@
       <form class="form-horizontal" action="welcome.php" method="post">
         <fieldset>
           <div class="form-group">
-            <label class="col-2" for="fname">First name:</label> 
-            <div class="col-4">
-              <input class="form-control" type="text" id="fname" name="fname" placeholder="Full name">
-            </div>
-
-            <label class="col-2" for="lname">Last name:</label> 
-            <div class="col-4">
-              <input class="form-control" type="text" id="lname" name="lname" placeholder="Last name">
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label class="col-2" for="age">Age:</label>
-            <div class="col-4">
-              <input class="form-control" type="number" id="age" name="age" placeholder="Enter age">
-            </div>
-          </div>
-
-          <div class="form-group">
             <label class="col-2" for="street-num">Street number:</label>
             <div class="col-10">
-              <input class="form-control" type="tel" id="street-num" name="street-num" placeholder="1600">
+              <input class="form-control" type="tel" id="street-num" name="street-num" value="300">
             </div>
           </div>
 
           <div class="form-group">
             <label class="col-2" for="street">Street:</label>
             <div class="col-10">
-              <input class="form-control" type="tel" id="street" name="street" placeholder="Pennsylvania Avenue">
+              <input class="form-control" type="tel" id="street" name="street" value="W 23rd St">
             </div>
           </div>
 
           <div class="form-group">
             <label class="col-2" for="street">City:</label>
             <div class="col-10">
-              <input class="form-control" type="text" id="city" name="city" placeholder="Topeka">
+              <input class="form-control" type="text" id="city" name="city" value="New York">
             </div>
           </div>
 
@@ -78,7 +59,7 @@
 
               <?php
 
-                  $states_arr = array('KS'=>"Kansas");
+                  $states_arr = array('KS'=>"Kansas",'NY' => "New York");
 
                   function showOptionsDrop($array, $active, $echo=true){
                       $string = '';

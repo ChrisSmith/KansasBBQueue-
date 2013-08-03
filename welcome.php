@@ -1,14 +1,10 @@
-
-
-
-
-
-
-
-
 <!doctype html>
 <html>
   <head>
+  <?php
+    $addressstring = $_POST["street-num"]." ".$_POST["street"]." ".$_POST["city"]." ".$_POST["state"];
+    //var_dump($addressstring);
+    ?>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script language="javascript">
 function post(dictionary, url, method) {
@@ -36,7 +32,7 @@ function post(dictionary, url, method) {
 
     var myDictionary = [];
     //myDictionary["electionid"] = "<?php echo $_POST['electionid']; ?>";
-    myDictionary["address"] = "<?php echo $_POST['address']; ?>";
+    myDictionary["address"] = "<?php echo $addressstring; ?>";
        
 
 
@@ -123,17 +119,7 @@ $json = json_decode(file_get_contents($jsonurl),true);
 //print_r($json);
 
     ?>
-    <?php
-    echo $_POST["street-num"].$_POST["street"].$_POST["state"];
-    ?>
-<!-- 
 
- Welcome <?php echo $_POST["fname"]; echo " " . $_POST["lname"]; ?>!<br>
-You are <?php echo $_POST["street"]; ?> years old.<br>
-You live at <?php echo $_POST["street-num"] . " " . $_POST["street"]; ?> in <?php echo $_POST["state"] ?>.<br>
-Notify by <?php echo $_POST["notify"]; ?> -->
-
-<!-- <input type="button" value="Click me to POST" onclick="javascript:post(myDictionary, 'index.php');" /> -->
 
 
   </body>
