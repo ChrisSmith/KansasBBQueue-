@@ -71,7 +71,13 @@ class Database {
 		$query = "INSERT IGNORE INTO `polling` (`polling`) VALUES ('".mysql_real_escape_string($address)."');";
 		
 		mysqli_query($connection, $query);
-		$polling_id = get_inserted_id($connection, $query);
+		
+		$query = "SELECT `polling_id` FROM `polling` WHERE `polling` = '".mysql_real_escape_string($address)."'";
+		$result = mysqli_query($connection, $query);
+		
+		$row = mysqli_fetch_array($result, MYSQLI_BOTH);
+		$polling_id = $row[0];
+		//echo $polling_id;
 		
 		$query = "UPDATE `profile` SET  `polling_id` =  '$polling_id' WHERE  `phone` = '$phone';";
 		mysqli_query($connection, $query);
