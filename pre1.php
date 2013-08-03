@@ -1,14 +1,12 @@
 <html lang="en">
-  <head>
-  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-  	
-  	<link rel="stylesheet" href="css/bootstrap.min.css"></link>
-    <link rel="stylesheet" href="css/style.css"></link>
-
-  	<script type="text/javascript" src="js/jquery.min.js"></script>
-  	<script type="text/javascript" src="js/bootstrap.min.js"></script>
-  </head>
-  <body>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="css/bootstrap.min.css"></link>
+		<link rel="stylesheet" href="css/style.css"></link>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	</head>
+	<body>
 
 	<div class="container">
 		<div class="row">
