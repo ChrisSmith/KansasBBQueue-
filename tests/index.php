@@ -42,14 +42,23 @@ $sender = new twilioSender($lastMsg, $from, $db);
 ?>
 
 <html>
+<head>
+<style type="text/css">
+.bold {
+	font-weight: bold;
+}
+</style>
+</head>
 <body>
+
 
 <div>Test Cases</div>
 <div>
 	<?php 
 		$db->reset();
-		echo $sender->getResponseType("time") == Messages::WhatsYourAddress; 
 	?>
+	<div class="bold"><?php echo $sender->getResponseType("time") ?> </div> <div><?php echo Messages::WhatsYourAddress; ?> </div>
+
 </div>
 
 <div>
@@ -58,8 +67,8 @@ $sender = new twilioSender($lastMsg, $from, $db);
 		$db->location = "300 W 23rd St New York NY";
 		$sender->lastMsg = Messages::WhatsYourAddress;
 	?>
-	<div><?php echo $sender->getResponseType("time") ?> </div> <div><?php echo Messages::GetTimes; ?> </div>
-	<div><?php echo $db->pollingLoc ?> </div> <div><?php echo "PS 33, 281 9 Avenue, New York, NY, 10001" ?> </div>
+	<div class="bold"><?php echo $sender->getResponseType("time") ?> </div> <div><?php echo Messages::GetTimes; ?> </div>
+	<div class="bold"><?php echo $db->pollingLoc ?> </div> <div><?php echo "PS 33, 281 9 Avenue, New York, NY, 10001" ?> </div>
 </div>
 
 <div>
@@ -68,8 +77,8 @@ $sender = new twilioSender($lastMsg, $from, $db);
 		$db->location = "300 W 23rd St New York NY";
 		$sender->lastMsg = Messages::GetTimes;
 	?>
-	<div><?php echo $sender->getResponseType("time") ?> </div> <div><?php echo Messages::GetTimes; ?> </div>
-	<div><?php echo $db->pollingLoc ?> </div> <div><?php echo "PS 33, 281 9 Avenue, New York, NY, 10001" ?> </div>	
+	<div class="bold"><?php echo $sender->getResponseType("time") ?> </div> <div><?php echo Messages::GetTimes; ?> </div>
+	<div class="bold"><?php echo $db->pollingLoc ?> </div> <div><?php echo "PS 33, 281 9 Avenue, New York, NY, 10001" ?> </div>	
 </div>
 
 <div>Report Times</div>
@@ -80,9 +89,9 @@ $sender = new twilioSender($lastMsg, $from, $db);
 		$sender->lastMsg = Messages::WhatsYourAddress;
 	
 	?>
-	<div><?php echo $sender->getResponseType("65") ?> </div> <div><?php echo Messages::ReportBooths; ?> </div>
-	<div><?php echo $db->numPeople ?> </div> <div><?php echo 65 ?> </div>
-	<div><?php echo $db->phone ?> </div> <div><?php echo $from ?> </div>
+	<div class="bold"><?php echo $sender->getResponseType("65") ?> </div> <div><?php echo Messages::ReportBooths; ?> </div>
+	<div class="bold"><?php echo $db->numPeople ?> </div> <div><?php echo 65 ?> </div>
+	<div class="bold"><?php echo $db->phone ?> </div> <div><?php echo $from ?> </div>
 		
 </div>
 
