@@ -6,28 +6,43 @@
 		<script type="text/javascript" src="js/jquery.min.js"></script>
 		<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	</head>
+
+	<style>
+	h1 {font-size: 8em !important;}
+	body {text-align: center;}
+	form {
+		width: 400px;
+		margin: 0 auto;
+		margin-top: 50px;
+		margin-bottom: 50px;
+	}
+	</style>
+
 	<body>
 
 	<div class="container">
 		<div class="row">
 
-		    <img id="logo" src="img/bbq.svg">
-			<div class="col-8"><h1>Welcome to the BBQueue!</h1></div>
+			<div class="col-12"><h1>Fuck Queues</h1></div>
 
 			<div class="col-12">
-				<h3>Your next election is in 34 days!</h3>
+				<h4>Track and report your wait time on election day.</h4>
+
+				<h4>The New York City primary election is in 38 days.</h4>
 
 				<form class="form-horizontal" action="index.php" method="post">
 					<fieldset>
 						<div class="form-group">
-							<p class="col-12" class="help-block">Register and we'll tell you when lines at voting booths are short</p>
-							<div class="col-10">
-				              <input class="form-control" type="tel" id="phone" name="phone" placeholder="555-555-5555">
+							<div>
+				              <input class="form-control" type="tel" align="center" id="phone" name="phone" placeholder="(212) 555-5555">
 				            </div>
 						</div>
-						<button id="submit" type="submit" class="btn btn-primary">Submit</button>
+						<button id="submit" type="submit" class="btn btn-primary">Skip the wait</button>
 					</fieldset>
 				</form>
+
+				<h4 style="font-style: italic">"Fuck the wait. Go vote."</h4>
+
 			</div>
 			
 		</div>
