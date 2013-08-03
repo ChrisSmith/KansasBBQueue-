@@ -1,11 +1,26 @@
 <?php 
 /* Import API */
-//require_once('api.php'); 
+require_once('api.php'); 
 include 'welcome.php';
+$electionyear = '2013';
+$electionmonth = '09';
+$electionday = '10';
+$electionstarttimehour = '02';
+$electionstarttimemin = '30';
+$electionstarttimesec = '00';
+$electionendtimehour = '17';
+$electionendtimemin = '22';
+$electionendtimesec = '00';
+
+$startTime = setDate($electionyear, $electionmonth, $electionday, $electionstarttimehour, $electionstarttimemin, $electionstarttimesec);
+$endTime = setDate($electionyear, $electionmonth, $electionday, $electionendtimehour, $electionendtimemin, $electionendtimesec);
+
+echo "TEST: ".getStamp($startTime, "America/New_York")."<br>";
 echo userAddress();
 echo pollingLocation();
-echo "<br>Start". $_POST['startTime'];
-echo "<br>End". $_POST['endTime'];
+echo "<br>startTime : ".$startTime;
+echo "<br>endTime : ".$endTime;
+echo "<br>".getCurrentTimestamp();
 
 ?>
 
@@ -68,7 +83,7 @@ echo "<br>End". $_POST['endTime'];
 
 
 //7- Start
-	$query_future = "INSERT INTO `time_future` VALUES (NULL, '$polling_id', '$start', '$end');";
+	$query_future = "INSERT INTO `time_future` VALUES (NULL, '$polling_id', FROM_UNIXTIME($start), FROM_UNIXTIME($end));";
 //7- End
 
 
