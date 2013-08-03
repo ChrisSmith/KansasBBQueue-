@@ -11,37 +11,37 @@
 	<div class="container">
 		<div class="row">
 
-			<div class="col-8"><h1>Happy election day!</h1></div>
-
 			<div class="col-12">
-
+				<h1>FUCK QUEUES.</h1>
+				<h1>IT'S TIME TO VOTE.</h1>
+							
 				<form class="form-horizontal" method="post">
 					<fieldset>
 						<div class="form-group">
-							<p class="col-12" class="help-block">Check the wait time at your polling place or, if you're in line, tell us how long your wait is.</p>
+							<p class="col-12" class="help-block">Check the wait time at your polling place. If you're in line, tell us how long your wait is.</p>
 				            <label class="col-2" for="street-num">Street number:</label>
-				            <div class="col-10">
+				            <div class="col-6">
 				              <input class="form-control" type="tel" id="street-num" name="street-num" value="300">
 				            </div>
 						</div>
 
 						<div class="form-group">
 							<label class="col-2" for="street">Street:</label>
-							<div class="col-10">
+							<div class="col-6">
 							  <input class="form-control" type="tel" id="street" name="street" value="W 23rd St">
 							</div>
 						</div>
 
 						<div class="form-group">
 							<label class="col-2" for="street">City:</label>
-							<div class="col-10">
+							<div class="col-6">
 							  <input class="form-control" type="text" id="city" name="city" value="New York">
 							</div>
 						</div>
 
 						<div class="form-group">
 							<label class="col-2" for="state">State:</label>
-							<div class="col-10">
+							<div class="col-6">
 
 							  <?php
 
@@ -67,7 +67,14 @@
 						</div>
 
 						<div class="form-group">
-							<label class="checkbox-inline col-6">
+							<label class="col-2" for="state">Zip Code:</label>
+							<div class="col-2">
+							<input class="form-control" type="text" id="zip" name="zip" placeholder="11211">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="checkbox-inline col-4">
 								<input type="radio" name="checkin" value="get"> Check your wait time </input>
 							</label>
 							<label class="checkbox-inline col-6">
