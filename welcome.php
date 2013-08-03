@@ -1,4 +1,3 @@
-<!doctype html>
 
 
   <?php
@@ -32,4 +31,3 @@
 	?>
 
 
-</html>

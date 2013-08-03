@@ -1,19 +1,19 @@
 <?php
-function connectDB(){
-	$db_host = "localhost"; 
-	$db_username = "root";  
-	$db_pass = "password";  
-	$db_name = "kansasbbqueue"; 
-	$connection = mysqli_connect("$db_host","$db_username","$db_pass","$db_name");
-	if (!$connection) {
-	    die('Connect Error (' . mysqli_connect_errno() . ') '
-	            . mysqli_connect_error());
-	}
-	else{
-		//echo 'Success... ' . mysqli_get_host_info($connection) . "\n";
-	}  
-	return $connection;   
-}
+// function connectDB(){
+// 	$db_host = "localhost"; 
+// 	$db_username = "root";  
+// 	$db_pass = "password";  
+// 	$db_name = "kansasbbqueue"; 
+// 	$connection = mysqli_connect("$db_host","$db_username","$db_pass","$db_name");
+// 	if (!$connection) {
+// 	    die('Connect Error (' . mysqli_connect_errno() . ') '
+// 	            . mysqli_connect_error());
+// 	}
+// 	else{
+// 		//echo 'Success... ' . mysqli_get_host_info($connection) . "\n";
+// 	}  
+// 	return $connection;   
+// }
 
 function get_inserted_id($connection, $query) {
 	mysqli_query($connection, $query_polling);
