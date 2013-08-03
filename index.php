@@ -1,13 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-  	
-  	<link rel="stylesheet" href="css/bootstrap.min.css"></link>
+ <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    <link rel="stylesheet" href="css/bootstrap.min.css"></link>
+
+    <link rel="stylesheet" href="css/jquery-ui.css"></link>
+
     <link rel="stylesheet" href="css/style.css"></link>
 
-  	<script type="text/javascript" src="js/jquery.min.js"></script>
-  	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+
+    <script type="text/javascript" src="js/jquery-ui.js"></script>
+
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
   </head>
   <body>
   <div class="container">
@@ -97,17 +106,6 @@
             </div>
           </div>
 
-<<<<<<< HEAD
-          <div class="form-group">
-            <p class="col-12" class="help-block">When do you plan to vote?</p>
-            <label class="checkbox-inline col-2" for="date">Date:</label>
-                <input type="date" class="form-control col-3" name="day">
-              <label class="checkbox-inline col-2" for="start">Start time:</label>
-                <input type="time" class="form-control col-4" name="start">
-              <label class="checkbox-inline col-2" for="end">End time:</label>
-                <input type="time" class="form-control col-4" name="start">
-
-=======
           <script>
             var startTime;
             var endTime;
@@ -155,11 +153,11 @@
             });
 
           </script>
+
           <div class="form-group">
             <label class="col-12" for="time-range">When do you plan to vote on election day?</label><br>
             <div id="slider-range" class="col-4"></div><br>
             <span id="time"></span>
->>>>>>> a6f38efebaf40e8528143c015383ef17466ef92b
           </div>
 
           <div class="form-group">
