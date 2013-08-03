@@ -1,6 +1,6 @@
 <?php
 
-require __DIR__.'/php/twilio-php/Services/Twilio.php';
+require __DIR__.'/twilio-php/Services/Twilio.php';
 require __DIR__.'/twillio-config.php';
 require __DIR__.'/php/database.php';
 require __DIR__.'/polls.php';
@@ -9,11 +9,11 @@ class Messages
 {
     const WhatsYourAddress = 0;
     const ReportTimes = 1;
-    const ReportBooths = 1;
-    const GetTimes = 2;
-    const Thanks = 3;
-    const Unknown = 4;
-    const Help = 5;
+    const ReportBooths = 2;
+    const GetTimes = 3;
+    const Thanks = 4;
+    const Unknown = 5;
+    const Help = 6;
 }
 
 class twilioSender {
