@@ -6,12 +6,15 @@ class mockdb {
 
 	
 	public $location;
+	public $pollingLoc;
 
 	public function getLocationForUser($phone) {
 		return $this->location;
 	}
 
-
+	public function insertAddress($location){
+		$this->pollingLoc = $location;
+	}
 }
 
 $db = new mockdb();
@@ -28,7 +31,7 @@ $sender = new twilioSender($lastMsg, $from, $db);
 <div>
 	<?php 
 		$db->location = null;
-		echo $sender->getResponseType("time"); 
+		echo $sender->getResponseType("time") == Messages::WhatsYourAddress; 
 	?>
 </div>
 

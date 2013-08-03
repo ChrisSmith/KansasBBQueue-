@@ -3,6 +3,7 @@
 require __DIR__.'/php/twilio-php/Services/Twilio.php';
 require __DIR__.'/twillio-config.php';
 require __DIR__.'/php/database.php';
+require __DIR__.'/polls.php';
 
 
 class twilioSender {
@@ -10,11 +11,13 @@ class twilioSender {
 	public $lastMsg;
 	private $fromPhone;
 	private $db;
+	private $polls;
 
 	public function __construct($lastMsg, $from, $db){
 		$this->lastMsg = $lastMsg;
 		$this->fromPhone = $from;
 		$this->db = $db;
+		$this->polls = new Polls();
 	}
 	
 	class Messages
@@ -48,8 +51,19 @@ class twilioSender {
 		$location = $db->getLocationForUser($usersPhone);
 
 		if ($location == null){
-			$location = getPollingLocationForAddress($body);
-			//TODO save location in db
+			$lookupRes = $this->polls->locate($body);
+			if($lookupRes['status'] == 'success'){
+				$firstLoc = $result['pollingLocations'][0];
+				//save loc / get locationId
+				$addr = $poll_location['address'];
+				$location = $addr['locationName']
+					. $addr['line1'] . ', '
+    				. $addr['city'] . ', '
+    				. $addr['state'] . ', '
+    				. $addr['zip'];
+    			//$poll_location['pollingHours'];
+    			$this->db->insertAddress($location);
+			}
 		}
 
 		if($location == null){
@@ -73,7 +87,7 @@ class twilioSender {
 		default:
 			if($lastMsg == Messages::ReportTimes && is_numeric($body)){
 				$int = intval($body)
-				$this->db->()
+				// $this->db->()
 
 				return Messages::ReportBooths;
 				, );
@@ -95,7 +109,7 @@ class twilioSender {
 			case Messages::ReportTimes:
 				return "How many people are at your polling place?";
 			case Messages::GetTimes:
-				return getTimes($location);
+				return "Looks like it'll be 14 minutes right now"; //getTimes($location);
 			case Messages::ReportBooths:
 				return "Great, how many booths did they have?";
 			case Messages::Thanks:
