@@ -47,7 +47,7 @@ class twilioSender {
 
 	function getResponseType($body){
 
-		$location = $db->getLocationForUser($usersPhone);
+		$location = $this->db->getLocationForUser($usersPhone);
 
 		if ($location == null){
 			$lookupRes = $this->polls->locate($body);
