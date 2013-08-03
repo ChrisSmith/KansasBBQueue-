@@ -1,7 +1,7 @@
 <?php
 
-require '/twilio-php/Services/Twilio.php';
-require '/twillio-config.php';
+require __DIR__.'/php/twilio-php/Services/Twilio.php';
+require __DIR__.'/twillio-config.php';
 
 /*
 Defined in twillio-config.php
@@ -13,8 +13,8 @@ $client = new Services_Twilio($AccountSid, $AuthToken);
  
 try {
     $sms = $client->account->sms_messages->create(
-        "YYY-YYY-YYYY", // From this number
-        "XXX-XXX-XXXX", // To this number
+        "", // From this number
+        "", // To this number
         "Test message!"
     );
 } catch (Services_Twilio_RestException $e) {
@@ -22,3 +22,5 @@ try {
 }
 
 ?>
+
+Done!
