@@ -3,7 +3,7 @@
 require __DIR__.'/twilio-php/Services/Twilio.php';
 require __DIR__.'/../twillio-config.php';
 require __DIR__.'/../database.php';
-require __DIR__.'/..polls.php';
+require __DIR__.'/../polls.php';
 
 class Messages
 {
