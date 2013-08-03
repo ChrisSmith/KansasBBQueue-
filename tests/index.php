@@ -58,7 +58,7 @@ $sender = new twilioSender($lastMsg, $from, $db);
 		$db->location = "300 W 23rd St New York NY";
 		$sender->lastMsg = Messages::WhatsYourAddress;
 		echo $sender->getResponseType("time") == Messages::GetTimes; 
-		echo $mockdb->pollingLoc == "PS 33, 281 9 Avenue, New York, NY, 10001";
+		echo $db->pollingLoc == "PS 33, 281 9 Avenue, New York, NY, 10001";
 	?>
 </div>
 
@@ -68,7 +68,7 @@ $sender = new twilioSender($lastMsg, $from, $db);
 		$db->location = "300 W 23rd St New York NY";
 		$sender->lastMsg = Messages::GetTimes;
 		echo $sender->getResponseType("time") == Messages::GetTimes; 
-		echo $mockdb->pollingLoc == "PS 33, 281 9 Avenue, New York, NY, 10001";
+		echo $db->pollingLoc == "PS 33, 281 9 Avenue, New York, NY, 10001";
 	?>
 </div>
 

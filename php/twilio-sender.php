@@ -84,12 +84,12 @@ class twilioSender {
 		case "t":
 			return Messages::GetTimes;
 		default:
-			if($lastMsg == Messages::ReportTimes && is_numeric($body)){
+			if($this->lastMsg == Messages::ReportTimes && is_numeric($body)){
 				$int = intval($body);
 				$this->db->checkIn($this->fromPhone, $int);
 				return Messages::ReportBooths;
 				
-			}else if($lastMsg == Messages::ReportBooths && is_numeric($body)){
+			}else if($this->lastMsg == Messages::ReportBooths && is_numeric($body)){
 				$int = intval($body);
 				// $this->db->checkIn($this->fromPhone, $int);
 				
