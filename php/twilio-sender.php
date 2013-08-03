@@ -42,6 +42,7 @@ class twilioSender {
 			
 		}catch(Exception $e){
 			//sms failed :(
+			error_log($e);
 		}
 	}
 
