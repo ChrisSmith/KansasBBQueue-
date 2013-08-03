@@ -103,7 +103,9 @@
               startTime = getTime(hours0, minutes0);
               endTime = getTime(hours1, minutes1);
               $("#time").text(startTime + ' - ' + endTime);
+             
             }
+           
             function getTime(hours, minutes) {
               var time = null;
               minutes = minutes + "";
@@ -139,6 +141,9 @@
             <label class="col-12" for="time-range">When do you plan to vote on election day?</label><br>
             <div id="slider-range" class="col-4"></div><br>
             <span id="time"></span>
+
+            <input type="hidden" type="text" name="startTime" id="startTime" value="3:00 PM">
+            <input type="hidden" type="text" name="endTime" id="endTime" value="5:00 PM">
           </div>
 
           <div class="form-group">
