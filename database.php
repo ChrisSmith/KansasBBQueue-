@@ -68,7 +68,11 @@ class Database {
 	public function insertPollingAddress($phone, $address) {
 		$connection = connectDB();
 		
-		$query = "UPDATE `profile` SET  `address` =  '$address' WHERE  `phone` = '$phone';";
+		$query = "INSERT IGNORE INTO `polling` (`polling`) VALUES ($address)";
+		mysqli_query($connection, $query);
+		$polling_id = get_inserted_id($connection, $query);
+		
+		$query = "UPDATE `profile` SET  `polling_id` =  'polling_id' WHERE  `phone` = '$phone';";
 		mysqli_query($connection, $query);
 		
 		mysqli_close($connection);
