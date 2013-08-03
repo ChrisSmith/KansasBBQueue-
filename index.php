@@ -1,15 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-  	
-  	<link rel="stylesheet" href="css/bootstrap.min.css"></link>
+ <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    <link rel="stylesheet" href="css/bootstrap.min.css"></link>
+
     <link rel="stylesheet" href="css/jquery-ui.css"></link>
+
     <link rel="stylesheet" href="css/style.css"></link>
 
-  	<script type="text/javascript" src="js/jquery.min.js"></script>
+
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+
     <script type="text/javascript" src="js/jquery-ui.js"></script>
-  	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
   </head>
   <body>
   <div class="container">
@@ -26,35 +33,23 @@
       <form class="form-horizontal" action="welcome.php" method="post">
         <fieldset>
           <div class="form-group">
-            <label class="col-2" for="fname">First name:</label> 
-            <div class="col-4">
-              <input class="form-control" type="text" id="fname" name="fname" placeholder="Full name">
-            </div>
-
-            <label class="col-2" for="lname">Last name:</label> 
-            <div class="col-4">
-              <input class="form-control" type="text" id="lname" name="lname" placeholder="Last name">
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label class="col-2" for="age">Age:</label>
-            <div class="col-4">
-              <input class="form-control" type="number" id="age" name="age" placeholder="Enter age">
-            </div>
-          </div>
-
-          <div class="form-group">
             <label class="col-2" for="street-num">Street number:</label>
             <div class="col-10">
-              <input class="form-control" type="tel" id="street-num" name="street-num" placeholder="1600">
+              <input class="form-control" type="tel" id="street-num" name="street-num" value="300">
             </div>
           </div>
 
           <div class="form-group">
             <label class="col-2" for="street">Street:</label>
             <div class="col-10">
-              <input class="form-control" type="tel" id="street" name="street" placeholder="Pennsylvania Avenue">
+              <input class="form-control" type="tel" id="street" name="street" value="W 23rd St">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-2" for="street">City:</label>
+            <div class="col-10">
+              <input class="form-control" type="text" id="city" name="city" value="New York">
             </div>
           </div>
 
@@ -64,7 +59,7 @@
 
               <?php
 
-                  $states_arr = array('KS'=>"Kansas");
+                  $states_arr = array('KS'=>"Kansas",'NY' => "New York");
 
                   function showOptionsDrop($array, $active, $echo=true){
                       $string = '';
@@ -132,15 +127,16 @@
 
             $(document).ready(function() {
               $("#slider-range").slider({
-                range: true, min: 0, max: 2879, values: [540, 1020], step:5, slide: slideTime
+                range: true, min: 420, max: 1260, values: [900, 1020], step:5, slide: slideTime
                 });
 
-               $("#time").text("9:00 AM" + ' - ' + "5:00 PM");
+              $("#time").text("3:00 PM" + ' - ' + "5:00 PM");
             });
 
           </script>
+
           <div class="form-group">
-            <label class="col-12" for="time-range">When do you plan to vote?</label><br>
+            <label class="col-12" for="time-range">When do you plan to vote on election day?</label><br>
             <div id="slider-range" class="col-4"></div><br>
             <span id="time"></span>
           </div>
@@ -168,6 +164,5 @@
 	</div>
 
   </div>
-
 </body>
 </html>
