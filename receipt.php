@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php //echo$_POST['phone'];?>
  <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -37,6 +38,8 @@
         <h4>Sit back, relax and get ready to vote.</h4>
       
       <form class="form-horizontal" action="query.php" method="post">
+      <input type="hidden" type="tel" align="center" id="phone" name="phone" maxlength="10" value="<?php echo $_POST['phone'];?>">
+
         <fieldset>
           <div class="form-group">
             <label class="col-2" for="street-num">Home address:</label>

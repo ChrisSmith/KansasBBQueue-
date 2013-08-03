@@ -33,7 +33,7 @@
 					<fieldset>
 						<div class="form-group">
 							<div>
-				              <input class="form-control" type="tel" align="center" id="phone" name="phone" placeholder="(212) 555-5555">
+				              <input class="form-control" type="tel" align="center" id="phone" name="phone" maxlength="10" placeholder="(212) 555-5555">
 				            </div>
 						</div>
 						<button id="submit" type="submit" class="btn btn-primary">Skip the wait</button>
