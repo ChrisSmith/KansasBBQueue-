@@ -26,9 +26,8 @@
 			<div class="col-12"><h1>Fuck Queues</h1></div>
 
 			<div class="col-12">
-				<h4>Track and report your wait time on election day.</h4>
-
-				<h4>The New York City primary election is in 38 days.</h4>
+				<h4>The NYC primary election is in 38 days.</h4>
+				<h4>Track and report your wait time at the polls.</h4>
 
 				<form class="form-horizontal" action="index.php" method="post">
 					<fieldset>

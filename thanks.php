@@ -8,7 +8,10 @@
 
     <style>
     body { background-color: black !important;   }
-    h1 { color: white;}
+    h1 {
+      color: white;
+      font-size: 7em;
+    }
     </style>
 
   </head>
@@ -18,8 +21,7 @@
     <div class="row">
 
       <div class="col-12">
-        <h1>THANKS FOR YOUR HELP!</h1>
-        <h1>FUQUEUES!</h1>
+        <h1>YOU ROCK.</h1>
       </div>
 
       <img src="img/fireworks12.gif"><br>
