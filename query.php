@@ -15,6 +15,7 @@ echo pollingLocation();
 echo "<br>startTime : ".$startTime;
 echo "<br>endTime : ".$endTime;
 echo "<br>".getCurrentTimestamp();
+echo "<br>Phone: ".$_POST['phone'];
 
 ?>
 
