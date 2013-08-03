@@ -9,11 +9,10 @@ $electionday = '10';
 $startTime = setDate($electionyear, $electionmonth, $electionday, $electionstarttimehour, $electionstarttimemin, $electionstarttimesec);
 $endTime = setDate($electionyear, $electionmonth, $electionday, $electionendtimehour, $electionendtimemin, $electionendtimesec);
 
-echo "TEST: ".getStamp($startTime, "America/New_York")."<br>";
-echo userAddress();
-echo pollingLocation();
-echo "<br>startTime : ".$startTime;
-echo "<br>endTime : ".$endTime;
+
+//echo userAddress();
+//echo pollingLocation();
+
 echo "<br>".getCurrentTimestamp();
 echo "<br>Phone: ".$_POST['phone'];
 
