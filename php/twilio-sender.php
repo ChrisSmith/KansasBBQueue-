@@ -30,7 +30,7 @@ class twilioSender {
 		$this->polls = new Polls();
 	}
 	
-	function sendSms($text, $msgType){
+	function sendSms($text){
 
 		$client = new Services_Twilio($AccountSid, $AuthToken);
 		try{

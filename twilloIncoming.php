@@ -19,6 +19,8 @@ $sender = new twilioSender($lastMsg, $from, $db);
 
 $respType = $sender->getResponseType($body);
 $respText = $sender->getReponseText($respType);	
+$sender->sendSms($respText);
 $_SESSION['lastMsg'] = $respType;
+
 
 ?>
