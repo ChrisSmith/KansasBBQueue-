@@ -30,7 +30,7 @@
 
     <div class="col-12 col-lg-8">
       
-      <form class="form-horizontal" action="welcome.php" method="post">
+      <form class="form-horizontal" action="query.php" method="post">
         <fieldset>
           <div class="form-group">
             <label class="col-2" for="street-num">Street number:</label>

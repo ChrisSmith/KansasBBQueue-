@@ -1,6 +1,9 @@
 <?php 
 /* Import API */
-require_once('api.php'); 
+//require_once('api.php'); 
+include 'welcome.php';
+echo userAddress();
+echo pollingLocation();
 ?>
 
 <?php
