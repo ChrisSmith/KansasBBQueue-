@@ -67,7 +67,7 @@ class twilioSender {
     				. $addr['state'] . ', '
     				. $addr['zip'];
     			//$poll_location['pollingHours'];
-    			$this->db->insertPollingAddress($location);
+    			$this->db->insertPollingAddress($this->fromPhone, $location);
     			return Messages::Help;	
 			}
 		}
