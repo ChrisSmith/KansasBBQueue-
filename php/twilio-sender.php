@@ -52,9 +52,9 @@ class twilioSender {
 
 	function getResponseType($body){
 		$body = strtolower($body);
-		$location = $this->db->getLocationForUser($this->fromPhone);
+		$location = $this->db->getLocationForUser($this->fromPhone); //$location is the polling location from db 
 		
-		if (empty($location)){
+		if (empty($location)){ // if empty call google and insert into db assuming $body a valid address 
 			$lookupRes = $this->polls->locate($body);
 
 			if($lookupRes['status'] == 'success'){
@@ -71,13 +71,11 @@ class twilioSender {
     			$phone = $this->fromPhone;
     			$this->db->insertPollingAddress($phone, $location);
     			return Messages::Help;	
+			}else{
+				return Messages::WhatsYourAddress;
 			}
 		}
-
-		if(empty($location)){
-			return Messages::WhatsYourAddress;	
-		}
-
+		else {
 		switch($body){
 		case "stop":
 			//unsubscribe
@@ -106,6 +104,41 @@ class twilioSender {
 				return Messages::Unknown;
 			}
 		}
+
+		}
+
+		// if(empty($location)){ // if body is empty or not an address 
+		// 	return Messages::WhatsYourAddress;	
+		// }
+
+		// switch($body){
+		// case "stop":
+		// 	//unsubscribe
+		// 	break;
+		// case "h":
+		// case "help":
+		// 	return Messages::Help;
+		// case "c":
+		// case "checkin":
+		// 	return Messages::ReportTimes;
+		// case "time":
+		// case "times":
+		// case "t":
+		// 	return Messages::GetTimes;
+		// default:
+		// 	if($this->lastMsg == Messages::ReportTimes && is_numeric($body)){
+		// 		$int = intval($body);
+		// 		$this->db->checkIn($this->fromPhone, $int);
+		// 		return Messages::ReportBooths;
+				
+		// 	}else if($this->lastMsg == Messages::ReportBooths && is_numeric($body)){
+		// 		$int = intval($body);
+		// 		$this->db->reportBooth($this->fromPhone, $int);
+		// 		return Messages::Thanks;		
+		// 	}else{
+		// 		return Messages::Unknown;
+		// 	}
+		// }
 	}
 
 	function getReponseText($responseType){
@@ -115,7 +148,7 @@ class twilioSender {
 			case Messages::ReportTimes:
 				return "How many people are at your polling place?";
 			case Messages::GetTimes:
-				return "Looks like it'll be 14 minutes right now"; //getTimes($location);
+				return "Looks like it'll be ".getWaitTime($number)."minutes right now"; //getTimes($location);
 			case Messages::ReportBooths:
 				return "Great, how many booths did they have?";
 			case Messages::Thanks:
